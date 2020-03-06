@@ -1,9 +1,6 @@
 <template>
-    <view class="content">
-        <image class="logo" src="/static/logo.png"></image>
-        <view class="text-area">
-            <text class="title">{{title}}</text>
-        </view>
+    <view class="index-style">
+        <cu-bottom-bar :tabs="tabs" :current="currentIndex" @currentChange="changeTab"></cu-bottom-bar>
     </view>
 </template>
 
@@ -11,12 +8,38 @@
     export default {
         data() {
             return {
-                title: 'Hello'
+                tabs: [
+                    {
+                        name: '书架',
+                        iconPath: '/static/bottom/bookCaseBlack.svg',
+                        selectedIconPath: '/static/bottom/bookCaseRed.svg'
+                    },
+                    {
+                        name: '排行',
+                        iconPath: '/static/bottom/rankingBlack.svg',
+                        selectedIconPath: '/static/bottom/rankingRed.svg'
+                    },
+                    {
+                        name: '分类',
+                        iconPath: '/static/bottom/classificationBlack.svg',
+                        selectedIconPath: '/static/bottom/classificationRed.svg'
+                    },
+                    {
+                        name: '我的',
+                        iconPath: '/static/bottom/myBlack.svg',
+                        selectedIconPath: '/static/bottom/myRed.svg'
+                    }
+                ],
+                currentIndex: 0
             }
         },
         onLoad() {
         },
-        methods: {}
+        methods: {
+            changeTab(index) {
+                this.currentIndex = index;
+            }
+        }
     }
 </script>
 
