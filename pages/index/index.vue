@@ -1,5 +1,6 @@
 <template>
     <view class="index-style">
+        <cu-top-bar :title="tabs[currentIndex].name"></cu-top-bar>
         <cu-bottom-bar :tabs="tabs" :current="currentIndex" @currentChange="changeTab"></cu-bottom-bar>
     </view>
 </template>

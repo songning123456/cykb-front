@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efeff9d3-6e9e-4452-ac46-fb7b6a6c4953" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/colorui/components/cu-bottom-bar.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/colorui/custom.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bottom/bookCaseBlack.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bottom/bookCaseRed.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bottom/classificationBlack.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bottom/classificationRed.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bottom/myBlack.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bottom/myRed.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bottom/rankingBlack.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/bottom/rankingRed.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/songning.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/colorui/components/cu-top-bar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colorui/components/cu-custom.vue" beforeDir="false" afterPath="$PROJECT_DIR$/colorui/components/cu-custom.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bottom/bookCaseBlack.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/bottom/bookCaseBlack.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/bottom/bookCaseRed.svg" beforeDir="false" afterPath="$PROJECT_DIR$/static/bottom/bookCaseRed.svg" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/index/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="506">
-              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+            <state relative-caret-position="308">
+              <caret line="14" column="67" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -41,33 +33,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/colorui/components/cu-bottom-bar.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
+            <state relative-caret-position="418">
+              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/bottom/bookCaseBlack.svg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/bottom/classificationBlack.svg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/bottom/myBlack.svg">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/bottom/rankingBlack.svg">
-          <provider selected="true" editor-type-id="images" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/colorui/components/cu-top-bar.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -77,6 +65,7 @@
       <find>text-gray</find>
       <find>fill:</find>
       <find>fill</find>
+      <find>width</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -89,17 +78,19 @@
         <option value="$PROJECT_DIR$/colorui/icon.css" />
         <option value="$PROJECT_DIR$/colorui/components/cu-custom.vue" />
         <option value="$PROJECT_DIR$/App.vue" />
-        <option value="$PROJECT_DIR$/main.js" />
-        <option value="$PROJECT_DIR$/static/bottom/bookCaseRed.svg" />
         <option value="$PROJECT_DIR$/static/bottom/classificationRed.svg" />
         <option value="$PROJECT_DIR$/static/bottom/myRed.svg" />
         <option value="$PROJECT_DIR$/static/bottom/rankingRed.svg" />
-        <option value="$PROJECT_DIR$/colorui/components/cu-bottom-bar.vue" />
         <option value="$PROJECT_DIR$/static/bottom/bookCaseGrey.svg" />
         <option value="$PROJECT_DIR$/static/bottom/classificationGrey.svg" />
         <option value="$PROJECT_DIR$/static/bottom/myGrey.svg" />
         <option value="$PROJECT_DIR$/static/bottom/rankingGrey.svg" />
+        <option value="$PROJECT_DIR$/static/bottom/bookCaseBlack.svg" />
+        <option value="$PROJECT_DIR$/static/bottom/bookCaseRed.svg" />
+        <option value="$PROJECT_DIR$/colorui/components/cu-bottom-bar.vue" />
+        <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/pages/index/index.vue" />
+        <option value="$PROJECT_DIR$/colorui/components/cu-top-bar.vue" />
       </list>
     </option>
   </component>
@@ -140,12 +131,6 @@
               <item name="cykb-front" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="cykb-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="cykb-front" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bottom" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -157,17 +142,17 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/bottom" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/top" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\WebStormProject\cykb-front\static\top" />
       <recent name="D:\WebStormProject\cykb-front\static\bottom" />
       <recent name="D:\WebStormProject\cykb-front\colorui\components" />
       <recent name="D:\WebStormProject\cykb-front\colorui" />
       <recent name="D:\WebStormProject\cykb-front" />
-      <recent name="D:\WebStormProject\cykb-front\static" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -192,7 +177,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583478420011</updated>
-      <workItem from="1583478422644" duration="6812000" />
+      <workItem from="1583478422644" duration="11240000" />
     </task>
     <task id="LOCAL-00001" summary="引入color-ui">
       <created>1583481718962</created>
@@ -201,22 +186,30 @@
       <option name="project" value="LOCAL" />
       <updated>1583481718962</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加底部条">
+      <created>1583485946598</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583485946598</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6812000" />
+    <option name="totallyTimeSpent" value="11240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="392" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15911485" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18177028" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" weight="0.4186551" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -234,18 +227,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="引入color-ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="引入color-ui" />
+    <MESSAGE value="添加底部条" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加底部条" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/cykb.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/mml3/mathml3-content.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="99" column="21" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/colorui/animation.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -302,43 +289,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/bottom/bookCaseRed.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/bottom/classificationRed.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/bottom/myRed.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/static/bottom/rankingRed.svg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/colorui/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="3904" column="18" selection-start-line="3904" selection-start-column="12" selection-end-line="3904" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/colorui/components/cu-bottom-bar.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="6" column="70" selection-start-line="6" selection-start-column="70" selection-end-line="6" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/bottom/bookCaseBlack.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/static/bottom/classificationBlack.svg">
@@ -350,10 +304,60 @@
     <entry file="file://$PROJECT_DIR$/static/bottom/rankingBlack.svg">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/static/bottom/classificationRed.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bottom/bookCaseRed.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/bottom/bookCaseBlack.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/colorui/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="1490" column="9" selection-start-line="1490" selection-start-column="9" selection-end-line="1490" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/colorui/components/cu-bottom-bar.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/mml3/mathml3-content.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="99" column="21" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/top/search.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/index/index.vue">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="67" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/colorui/components/cu-top-bar.vue">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
-          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
         </state>
       </provider>
     </entry>
