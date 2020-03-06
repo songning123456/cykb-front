@@ -1,10 +1,14 @@
 {
   "pages": [
     {
-      "path": "pages/index/index",
+      "path": "pages/login/Login",
       "style": {
         "navigationBarTitleText": "uni-app"
       }
+    },
+    {
+      "path": "pages/home/Home",
+      "style": {}
     }
   ],
   "globalStyle": {
