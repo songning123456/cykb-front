@@ -1,6 +1,6 @@
 <template>
     <view class="index-style">
-        <TopBar></TopBar>
+        <TopBar :title="current.value"></TopBar>
         <BottomBar :current="current" @changeIcon="changeIcon"></BottomBar>
     </view>
 </template>
@@ -16,7 +16,7 @@
             return {
                 current: {
                     key: 'favor',
-                    value: '书架'
+                    value: '收藏'
                 }
             }
         },

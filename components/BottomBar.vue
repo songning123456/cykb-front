@@ -24,7 +24,7 @@
                 cuIcon: [
                     {
                         key: 'favor',
-                        value: '书架'
+                        value: '收藏'
                     },
                     {
                         key: 'rank',
