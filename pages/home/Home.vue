@@ -7,7 +7,7 @@
             <classify v-if="current.value === '分类'"></classify>
             <mine v-if="current.value === '我的'"></mine>
         </view>
-        <BottomBar :current="current" @changeIcon="changeIcon"></BottomBar>
+        <BottomBar :current="current" @changeIcon="changeIcon" ref="bottomBar"></BottomBar>
     </view>
 </template>
 
@@ -33,7 +33,8 @@
         },
         computed: {
             contentStyle() {
-                return `height: calc(100% - ${this.CustomBar}px - 50px)`;
+                // 此处55px只是适应iphone xr/11 其他的不适应
+                return `height: calc(100% - ${this.CustomBar}px - 100rpx)`;
             }
         },
         methods: {
