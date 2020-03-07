@@ -6,7 +6,7 @@
                 <view class="cu-dialog">
                     <view class="cu-list menu text-left">
                         <view class="cu-item" v-for="(item, index) in modalList" :key="index">
-                            <view class="content" hover-class="text-red" hover-stay-time="1000">
+                            <view class="content">
                                 <text class="text-red" :class="'cuIcon-' + item.key"></text>
                                 <text class="text-black">{{item.value}}</text>
                             </view>
@@ -21,7 +21,7 @@
             {{title}}
         </view>
         <view v-if="title === '收藏' || title === '排行' || title === '分类'" class="action">
-            <text class="cuIcon-search"></text>
+            <text class="cuIcon-search" @tap="routeTo"></text>
         </view>
     </view>
 </template>
@@ -55,6 +55,14 @@
             },
             hideModal(e) {
                 this.modalName = null
+            },
+            routeTo() {
+                uni.navigateTo({
+                    url: '/pages/search/Search',
+                    success: res => {},
+                    fail: () => {},
+                    complete: () => {}
+                });
             }
         }
     }
@@ -70,16 +78,16 @@
             transform: unset;
 
             .cu-dialog {
-                width: 240rpx;
-                bottom: 480rpx;
-                right: 240rpx;
+                width: 120px;
+                bottom: 240px;
+                right:120px;
 
                 .cu-item {
-                    min-height: 60rpx;
+                    min-height: 30px;
 
                     .content {
                         width: 100%;
-                        font-size: 24rpx;
+                        font-size: 12px;
                         line-height: 2.6em;
                     }
                 }

@@ -9,6 +9,10 @@
     {
       "path": "pages/home/Home",
       "style": {}
+    },
+    {
+      "path": "pages/search/Search",
+      "style": {}
     }
   ],
   "globalStyle": {
