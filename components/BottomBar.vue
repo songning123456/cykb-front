@@ -50,9 +50,7 @@
 
 <style scoped>
     .bottom-bar {
-        bottom: 0;
-        position: fixed;
-        width: 100%;
+        position: relative;
     }
 
 </style>
