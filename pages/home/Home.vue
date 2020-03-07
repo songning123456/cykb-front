@@ -2,7 +2,7 @@
     <view class="index-style home">
         <TopBar :title="current.value"></TopBar>
         <view class="content" :style="contentStyle">
-            <collect v-if="current.value === '收藏'"></collect>
+            <collect v-if="current.value === '收藏'" @changeIcon="changeIcon"></collect>
             <rank v-if="current.value === '排行'"></rank>
             <classify v-if="current.value === '分类'"></classify>
             <mine v-if="current.value === '我的'"></mine>
