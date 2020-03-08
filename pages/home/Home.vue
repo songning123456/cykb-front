@@ -2,10 +2,11 @@
     <view class="index-style home">
         <TopBar :category="currentCategory"></TopBar>
         <view class="content" :style="contentStyle">
-            <collect v-if="current.value === '收藏'" @changeIcon="changeIcon"></collect>
-            <rank v-if="current.value === '排行'"></rank>
-            <classify v-if="current.value === '分类'"></classify>
-            <mine v-if="current.value === '我的'"></mine>
+            <home-page v-if="currentCategory === 'homePage'"></home-page>
+            <classify v-if="currentCategory === 'classify'"></classify>
+            <search v-if="currentCategory === 'search'"></search>
+            <book-case v-if="currentCategory === 'bookCase'"></book-case>
+            <mine v-if="currentCategory === 'my'"></mine>
         </view>
         <BottomBar :category="currentCategory" @changeCategory="changeCategory" ref="bottomBar"></BottomBar>
     </view>
@@ -14,14 +15,15 @@
 <script>
     import TopBar from '../../components/TopBar'
     import BottomBar from '../../components/BottomBar'
-    import Collect from './children/Collect';
-    import Rank from "./children/Rank";
     import Classify from "./children/Classify";
     import Mine from "./children/Mine";
+    import HomePage from "./children/HomePage";
+    import Search from "./children/Search";
+    import BookCase from "./children/BookCase";
 
     export default {
         name: "Home",
-        components: {Mine, Classify, Rank, Collect, BottomBar, TopBar},
+        components: {BookCase, Search, HomePage, Mine, Classify,  BottomBar, TopBar},
         data() {
             return {
                 CustomBar: this.CustomBar,
@@ -52,11 +54,6 @@
 <style lang="scss" scoped>
     .home {
         overflow: unset;
-
-        .content {
-            width: 100%;
-            overflow-y: auto;
-        }
     }
 
 </style>
