@@ -1,6 +1,6 @@
 <template>
-    <view class="top-bar" :style="[{height:CustomBar + 'px'}]" :class="[bgColor]">
-        <view class="cu-bar fixed" :style="style">
+    <view class="top-bar cu-custom" :style="[{height:CustomBar + 'px'}]">
+        <view class="cu-bar fixed top-bar-padding" :style="style" :class="[bgColor]">
             <template v-if="category !== 'search'">
                 <view class="action">
                     <switch v-if="category === 'classify'" class='switch-sex'
@@ -74,8 +74,9 @@
 
 <style lang="scss" scoped>
     .top-bar {
-        display: block;
-        position: relative;
+        .top-bar-padding {
+            padding-right: unset;
+        }
     }
 
 </style>
