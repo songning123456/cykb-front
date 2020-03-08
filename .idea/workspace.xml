@@ -2,10 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efeff9d3-6e9e-4452-ac46-fb7b6a6c4953" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/HomePage.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/TopBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TopBar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/TopBar.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/TopBar.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/TopBar.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/TopBar.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ReadBar.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/ReadBarList.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/children/BookCase.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/children/BookCase.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/children/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/children/HomePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/Home.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/Home.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/children/BookCase.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/children/BookCase.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/children/HomePage.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/children/HomePage.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/runtime.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/Home.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/Home.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/BookCase.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/BookCase.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/BookCase.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/BookCase.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/HomePage.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/HomePage.wxml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583478420011</updated>
       <workItem from="1583478422644" duration="11240000" />
-      <workItem from="1583499899419" duration="71659000" />
+      <workItem from="1583499899419" duration="74089000" />
     </task>
     <task id="LOCAL-00001" summary="引入color-ui">
       <created>1583481718962</created>
@@ -173,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583656078941</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="解决 顶部滚动问题">
+      <created>1583657330184</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1583657330184</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +226,7 @@
     <MESSAGE value="页面 优化" />
     <MESSAGE value="添加分类" />
     <MESSAGE value="bug 解决" />
-    <option name="LAST_COMMIT_MESSAGE" value="bug 解决" />
+    <MESSAGE value="解决 顶部滚动问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="解决 顶部滚动问题" />
   </component>
 </project>

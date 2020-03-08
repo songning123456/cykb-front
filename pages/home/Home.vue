@@ -5,7 +5,7 @@
             <home-page v-if="currentCategory === 'homePage'"></home-page>
             <classify v-if="currentCategory === 'classify'" :sex="modifySex(sex)"></classify>
             <search v-if="currentCategory === 'search'"></search>
-            <book-case v-if="currentCategory === 'bookCase'"></book-case>
+            <book-case v-if="currentCategory === 'bookcase'" @navChange="navChange"></book-case>
             <mine v-if="currentCategory === 'my'"></mine>
         </view>
         <BottomBar :category="currentCategory" @changeCategory="changeCategory" ref="bottomBar"></BottomBar>
@@ -47,6 +47,9 @@
                 } else {
                     return 'female'
                 }
+            },
+            navChange(arg0) {
+                this.currentCategory = arg0;
             }
         }
     }
