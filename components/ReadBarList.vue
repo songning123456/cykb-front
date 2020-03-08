@@ -4,7 +4,7 @@
         <view class="cu-item" v-if="add">
             <view class="cu-avatar radius lg add-image"></view>
             <view class="content">
-                <view class="text-black text-bold" @click="navChange">收藏小说</view>
+                <view class="text-black text-bold" @tap="navChange">收藏小说</view>
             </view>
         </view>
     </view>

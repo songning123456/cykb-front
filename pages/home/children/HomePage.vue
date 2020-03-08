@@ -29,6 +29,10 @@
             for (let i = 1; i < 20; i++) {
                 let temp =Object.assign({}, this.result[0]);
                 temp.novelId = temp.novelId + i;
+                temp.title = temp.title + i;
+                temp.author = temp.author + i;
+                temp.updateTime = temp.updateTime + i;
+                temp.latestChapter = temp.latestChapter + i;
                 this.result[i] = temp;
             }
         }

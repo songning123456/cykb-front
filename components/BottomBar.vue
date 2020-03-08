@@ -1,6 +1,6 @@
 <template>
     <view class="bottom-bar cu-bar tabbar bg-white">
-        <view class="action" v-for="(value,key, index) in cuIcons" :key="index" @click="changeCategory(key)"
+        <view class="action" v-for="(value,key, index) in cuIcons" :key="index" @tap="changeCategory(key)"
               :class="[category === key ? 'text-red' : 'text-gray',key === 'search' ? 'add-action' : '']">
             <view v-if="key !== 'search'" :class="'cuIcon-' + value.icon"></view>
             <button v-if="key === 'search'" class="cu-btn cuIcon-search bg-red shadow"></button>

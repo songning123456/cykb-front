@@ -8,7 +8,7 @@
                 <view class="text-black text-df">{{novel.title}}</view>
                 <view class="text-gray text-sm">{{novel.author}}</view>
                 <view class="text-grey text-xs">
-                    <text class="margin-right-sm">{{novel.updateTime}} :</text>
+                    <text class="margin-right-xs">{{novel.updateTime}} ▪</text>
                     <text class="text-cut">{{novel.latestChapter}}</text>
                 </view>
             </view>
