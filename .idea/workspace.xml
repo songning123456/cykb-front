@@ -2,16 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efeff9d3-6e9e-4452-ac46-fb7b6a6c4953" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/images/add.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/static/img/add.c54c60aa.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/songning.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/songning.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/BottomBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/BottomBar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/TopBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/TopBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/home/children/Collect.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/children/Collect.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/children/Collect.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/children/Collect.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/search/Search.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/BottomBar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/BottomBar.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/TopBar.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/components/TopBar.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/Home.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/Home.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/common/vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/BottomBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/BottomBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/BottomBar.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/BottomBar.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/TopBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/TopBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/TopBar.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/TopBar.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/TopBar.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/components/TopBar.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/Home.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/Home.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/Collect.js" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/Collect.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/Collect.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/Collect.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/Collect.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/mp-weixin/pages/home/children/Collect.wxss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -78,7 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583478420011</updated>
       <workItem from="1583478422644" duration="11240000" />
-      <workItem from="1583499899419" duration="43719000" />
+      <workItem from="1583499899419" duration="49836000" />
     </task>
     <task id="LOCAL-00001" summary="引入color-ui">
       <created>1583481718962</created>
@@ -136,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583582921024</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="collect 初步完成">
+      <created>1583590980455</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1583590980455</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +179,7 @@
     <MESSAGE value="Search 页面初步完成" />
     <MESSAGE value="页面添加" />
     <MESSAGE value="待解决 =》 真机模拟 出现滚动条" />
-    <option name="LAST_COMMIT_MESSAGE" value="待解决 =》 真机模拟 出现滚动条" />
+    <MESSAGE value="collect 初步完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="collect 初步完成" />
   </component>
 </project>

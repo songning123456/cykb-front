@@ -1,48 +1,35 @@
 <template>
     <view class="bottom-bar cu-bar tabbar bg-white">
-        <view class="action" v-for="(item, index) in cuIcon" :key="index" @click="changeIcon(item)">
-            <view class="cuIcon-cu-image">
-                <text class="lg"
-                      :class="['cuIcon-' + item.key, current.value === item.value ? 'text-red' : 'text-black']"></text>
-            </view>
-            <view :class="current.value === item.value ? 'text-red' : 'text-black'">{{item.value}}</view>
+        <view class="action" v-for="(value,key, index) in cuIcons" :key="index" @click="changeCategory(key)"
+              :class="[category === key ? 'text-red' : 'text-gray',key === 'search' ? 'add-action' : '']">
+            <view v-if="key !== 'search'" :class="'cuIcon-' + value.icon"></view>
+            <button v-if="key === 'search'" class="cu-btn cuIcon-search bg-red shadow"></button>
+            {{value.title}}
         </view>
     </view>
 </template>
 
 <script>
+    import navigation from "../util/navigation";
     export default {
         name: "BottomBar",
         props: {
-            current: {
-                type: Object,
-                default: {}
+            category: {
+                type: String,
+                default: ''
             }
         },
         data() {
             return {
-                cuIcon: [
-                    {
-                        key: 'favor',
-                        value: '收藏'
-                    },
-                    {
-                        key: 'rank',
-                        value: '排行'
-                    },
-                    {
-                        key: 'apps',
-                        value: '分类'
-                    },
-                    {
-                        key: 'my',
-                        value: '我的'
-                    }]
+                cuIcons: null
             }
         },
+        created() {
+          this.cuIcons = navigation;
+        },
         methods: {
-            changeIcon(icon) {
-                this.$emit('changeIcon', icon);
+            changeCategory(category) {
+                this.$emit('changeCategory', category);
             }
         }
     }

@@ -1,13 +1,13 @@
 <template>
     <view class="index-style home">
-        <TopBar :title="current.value"></TopBar>
+        <TopBar :category="currentCategory"></TopBar>
         <view class="content" :style="contentStyle">
             <collect v-if="current.value === '收藏'" @changeIcon="changeIcon"></collect>
             <rank v-if="current.value === '排行'"></rank>
             <classify v-if="current.value === '分类'"></classify>
             <mine v-if="current.value === '我的'"></mine>
         </view>
-        <BottomBar :current="current" @changeIcon="changeIcon" ref="bottomBar"></BottomBar>
+        <BottomBar :category="currentCategory" @changeCategory="changeCategory" ref="bottomBar"></BottomBar>
     </view>
 </template>
 
@@ -28,7 +28,8 @@
                 current: {
                     key: 'favor',
                     value: '收藏'
-                }
+                },
+                currentCategory: 'homePage'
             }
         },
         computed: {
@@ -40,6 +41,9 @@
         methods: {
             changeIcon(icon) {
                 this.current = icon;
+            },
+            changeCategory(category) {
+                this.currentCategory = category;
             }
         }
     }
