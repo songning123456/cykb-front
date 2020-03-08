@@ -1,9 +1,9 @@
 <template>
     <view class="index-style home">
-        <TopBar :category="currentCategory"></TopBar>
-        <view class="content" :style="contentStyle">
+        <TopBar :category="currentCategory" v-model='sex'></TopBar>
+        <view class="content global-bg-color" :style="contentStyle">
             <home-page v-if="currentCategory === 'homePage'"></home-page>
-            <classify v-if="currentCategory === 'classify'"></classify>
+            <classify v-if="currentCategory === 'classify'" :sex="modifySex(sex)"></classify>
             <search v-if="currentCategory === 'search'"></search>
             <book-case v-if="currentCategory === 'bookCase'"></book-case>
             <mine v-if="currentCategory === 'my'"></mine>
@@ -23,15 +23,12 @@
 
     export default {
         name: "Home",
-        components: {BookCase, Search, HomePage, Mine, Classify,  BottomBar, TopBar},
+        components: {BookCase, Search, HomePage, Mine, Classify, BottomBar, TopBar},
         data() {
             return {
                 CustomBar: this.CustomBar,
-                current: {
-                    key: 'favor',
-                    value: '收藏'
-                },
-                currentCategory: 'homePage'
+                currentCategory: 'homePage',
+                sex: true
             }
         },
         computed: {
@@ -41,11 +38,15 @@
             }
         },
         methods: {
-            changeIcon(icon) {
-                this.current = icon;
-            },
             changeCategory(category) {
                 this.currentCategory = category;
+            },
+            modifySex(sex) {
+                if (sex) {
+                    return 'male'
+                } else {
+                    return 'female'
+                }
             }
         }
     }

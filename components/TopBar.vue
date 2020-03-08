@@ -24,6 +24,7 @@
 
 <script>
     import navigation from "../util/navigation";
+
     export default {
         name: "TopBar",
         props: {
@@ -34,6 +35,10 @@
             bgColor: {
                 type: String,
                 default: 'bg-red'
+            },
+            value: {
+                type: Boolean,
+                default: true
             }
         },
         data() {
@@ -57,6 +62,7 @@
         methods: {
             changeSex(e) {
                 this.sex = e.detail.value;
+                this.$emit('input', this.sex);
             },
             InputFocus() {
             },

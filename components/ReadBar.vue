@@ -1,6 +1,6 @@
 <template>
-    <view class="read-bar cu-list menu-avatar">
-        <view class="cu-item" :class="modalName==='move-box-'+ novel.novelId?'move-cur':''"
+    <view class="read-bar cu-list menu-avatar global-bg-color">
+        <view class="cu-item global-bg-color" :class="modalName==='move-box-'+ novel.novelId?'move-cur':''"
               @touchstart="ListTouchStart" @touchmove="ListTouchMove" @touchend="ListTouchEnd"
               :data-target="'move-box-' + novel.novelId">
             <view class="cu-avatar radius lg" :style="[{backgroundImage: novel.coverUrl}]"></view>
