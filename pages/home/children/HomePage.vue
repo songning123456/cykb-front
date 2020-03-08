@@ -1,19 +1,12 @@
 <template>
     <view class="home-page full-width">
         <view class="cu-list menu-avatar global-bg-color">
-            <view class="cu-item global-bg-color" v-for="(item,index) in result" :key="index"
-                  :class="modalName==='move-box-'+ index?'move-cur':''"
-                  @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd"
-                  :data-target="'move-box-' + index">
+            <view class="cu-item global-bg-color" v-for="(item,index) in result" :key="index">
                 <view class="cu-avatar radius lg" :style="[{backgroundImage: item.coverUrl}]"></view>
                 <view class="content">
                     <view class="text-black text-df">{{item.title}}</view>
                     <view class="text-grey text-sm">{{item.author}} | {{item.category}}</view>
                     <view class="text-gray text-cut text-xs">{{item.introduction}}</view>
-                </view>
-                <view class="move">
-                    <view class="bg-grey">置顶</view>
-                    <view class="bg-red">删除</view>
                 </view>
             </view>
         </view>
@@ -25,9 +18,6 @@
         name: "HomePage",
         data() {
             return {
-                modalName: '',
-                listTouchStart: 0,
-                listTouchDirection: null,
                 // 假数据
                 result: [
                     {
@@ -48,25 +38,6 @@
                 temp.updateTime = temp.updateTime + i;
                 temp.latestChapter = temp.latestChapter + i;
                 this.result[i] = temp;
-            }
-        },
-        methods: {
-            // ListTouch触摸开始
-            touchStart(e) {
-                this.listTouchStart = e.touches[0].pageX
-            },
-            // ListTouch计算方向
-            touchMove(e) {
-                this.listTouchDirection = e.touches[0].pageX - this.listTouchStart > 0 ? 'right' : 'left'
-            },
-            // ListTouch计算滚动
-            touchEnd(e) {
-                if (this.listTouchDirection === 'left') {
-                    this.modalName = e.currentTarget.dataset.target
-                } else {
-                    this.modalName = null
-                }
-                this.listTouchDirection = null
             }
         }
     }
