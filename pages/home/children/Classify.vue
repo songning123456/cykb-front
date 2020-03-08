@@ -1,7 +1,7 @@
 <template>
     <view class="classify global-bg-color cu-list grid" :class="['col-' + gridCol,gridBorder?'':'no-border']">
         <view class="cu-item" v-for="(item,index) in result" :key="index">
-            <view class="cu-avatar radius" :class="'category-' +sex + '-' + item.category"></view>
+            <view class="cu-avatar lg radius" :class="'category-' +sex + '-' + item.category"></view>
             <view class="classify-margin text-black text-df">{{convertCategory(item.category)}}</view>
             <view class="text-gray text-sm">{{item.total}}</view>
         </view>
@@ -78,43 +78,43 @@
                 params2: [
                     {
                         category: 'gudaiyanqing',
-                        total: ''
+                        total: '10000'
                     },
                     {
                         category: 'xiandaiyanqing',
-                        total: ''
+                        total: '10000'
                     },
                     {
                         category: 'xuanhuanyanqing',
-                        total: ''
+                        total: '10000'
                     },
                     {
                         category: 'xuanyituili',
-                        total: ''
+                        total: '10000'
                     },
                     {
                         category: 'langmanqingchun',
-                        total: ''
+                        total: '10000'
                     },
                     {
                         category: 'xianxiaqiyuan',
-                        total: ''
+                        total: '10000'
                     },
                     {
                         category: 'kehuankongjian',
-                        total: ''
+                        total: '10000'
                     },
                     {
                         category: 'youxijingji',
-                        total: ''
+                        total: '10000'
                     },
                     {
                         category: 'qingxiaoshuo',
-                        total: ''
+                        total: '10000'
                     },
                     {
                         category: 'xianshishenghuo',
-                        total: ''
+                        total: '10000'
                     }
                 ]
             }
