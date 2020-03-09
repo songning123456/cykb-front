@@ -1,6 +1,6 @@
 <template>
-    <view class="home-page full-width">
-        <view class="cu-list menu-avatar global-bg-color">
+    <view class="home-page full-size">
+        <view class="cu-list full-size menu-avatar">
             <view class="cu-item global-bg-color" v-for="(item,index) in result" :key="index">
                 <view class="cu-avatar radius lg" :style="[{backgroundImage: item.coverUrl}]"></view>
                 <view class="content">
@@ -45,8 +45,17 @@
 
 <style lang="scss" scoped>
     .home-page {
-        .content {
-            width: calc(100% - 96upx);
+
+        .cu-list {
+            overflow: auto;
+
+            .cu-item {
+                justify-content: unset;
+
+                .content {
+                    width: calc(100% - 96upx - 80upx);
+                }
+            }
         }
     }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <view class="index-style home">
+    <view class="index-style home global-bg-color">
         <TopBar :category="currentCategory" v-model='sex'></TopBar>
         <view class="content global-bg-color" :style="contentStyle">
             <home-page v-if="currentCategory === 'homePage'"></home-page>

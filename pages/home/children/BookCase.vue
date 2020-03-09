@@ -1,6 +1,6 @@
 <template>
-    <view class="full-width">
-        <view class="cu-list menu-avatar global-bg-color">
+    <view class="book-case full-size">
+        <view class="cu-list full-size menu-avatar global-bg-color">
             <view class="cu-item global-bg-color" v-for="(item,index) in result" :key="index"
                   :class="modalName==='move-box-'+ index?'move-cur':''"
                   @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd"
@@ -85,6 +85,10 @@
     }
 </script>
 
-<style scoped>
-
+<style lang='scss' scoped>
+    .book-case {
+        .cu-list {
+            overflow: auto;
+        }
+    }
 </style>
