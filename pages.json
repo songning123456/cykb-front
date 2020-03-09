@@ -3,6 +3,10 @@
     {
       "path": "pages/home/Home",
       "style": {}
+    },
+    {
+      "path": "pages/comment/Comment",
+      "style": {}
     }
   ],
   "globalStyle": {

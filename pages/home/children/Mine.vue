@@ -1,7 +1,8 @@
 <template>
     <view class="mine full-width">
         <view class="cu-list menu">
-            <view class="cu-item arrow" hover-class='hover-class-style' hover-stay-time='1200' v-for="(item, index) in displayInfo" :key="index" @tap="tapBtn(item.icon)">
+            <view class="cu-item arrow" hover-class='hover-class-style' hover-stay-time='1200'
+                  v-for="(item, index) in displayInfo" :key="index" @tap="tapBtn(item.icon)">
                 <view class="content">
                     <text class="text-black" :class="'cuIcon-' + item.icon"></text>
                     <text class="text-black">{{item.title}}</text>
@@ -61,6 +62,9 @@
                         this.shareModal = true;
                         break;
                     case 'comment':
+                        uni.navigateTo({
+                            url: '/pages/comment/Comment'
+                        });
                         break;
                     case 'settings':
                         break;
