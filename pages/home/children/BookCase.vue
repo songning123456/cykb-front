@@ -88,7 +88,7 @@
 <style lang='scss' scoped>
     .book-case {
         .cu-list {
-            overflow: auto;
+            overflow-y: auto;
         }
     }
 </style>
