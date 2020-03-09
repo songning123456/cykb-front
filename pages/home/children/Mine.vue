@@ -1,7 +1,7 @@
 <template>
     <view class="mine full-width">
         <view class="cu-list menu">
-            <view class="cu-item arrow" v-for="(item, index) in displayInfo" :key="index" @tap="tapBtn(item.icon)">
+            <view class="cu-item arrow" hover-class='hover-class-style' hover-stay-time='1200' v-for="(item, index) in displayInfo" :key="index" @tap="tapBtn(item.icon)">
                 <view class="content">
                     <text class="text-black" :class="'cuIcon-' + item.icon"></text>
                     <text class="text-black">{{item.title}}</text>
@@ -67,7 +67,6 @@
                 }
             },
             hideShareModal(type) {
-                debugger;
                 this.shareModal = false;
                 if (!type) {
                     // 复制到剪切板
@@ -88,5 +87,10 @@
         .cu-modal {
             transform: scale(1);
         }
+    }
+
+    .hover-class-style {
+        opacity: 0.9;
+        background: #f7f7f7 !important;
     }
 </style>

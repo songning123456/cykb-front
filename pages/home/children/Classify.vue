@@ -1,6 +1,6 @@
 <template>
     <view class="classify global-bg-color cu-list grid" :class="['col-' + gridCol,gridBorder?'':'no-border']">
-        <view class="cu-item" v-for="(item,index) in result" :key="index">
+        <view class="cu-item" hover-class='hover-class-style' hover-stay-time='1200' v-for="(item,index) in result" :key="index">
             <view class="cu-avatar lg radius" :class="'category-' +sex + '-' + item.category"></view>
             <view class="classify-margin text-black text-df">{{convertCategory(item.category)}}</view>
             <view class="text-gray text-sm">{{item.total}}</view>
@@ -155,4 +155,8 @@
         }
     }
 
+    .hover-class-style {
+        opacity: 0.9;
+        background: #f7f7f7 !important;
+    }
 </style>

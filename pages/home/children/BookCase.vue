@@ -1,7 +1,7 @@
 <template>
     <view class="book-case full-size">
         <view class="cu-list full-size menu-avatar global-bg-color">
-            <view class="cu-item global-bg-color" v-for="(item,index) in result" :key="index"
+            <view class="cu-item global-bg-color" hover-class='hover-class-style' hover-stay-time='1200' v-for="(item,index) in result" :key="index"
                   :class="modalName==='move-box-'+ index?'move-cur':''"
                   @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd"
                   :data-target="'move-box-' + index">
@@ -90,5 +90,10 @@
         .cu-list {
             overflow-y: auto;
         }
+    }
+
+    .hover-class-style {
+        opacity: 0.9;
+        background: #f7f7f7 !important;
     }
 </style>

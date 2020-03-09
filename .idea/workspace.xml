@@ -4,6 +4,10 @@
     <list default="true" id="efeff9d3-6e9e-4452-ac46-fb7b6a6c4953" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/home/children/BookCase.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/children/BookCase.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/children/Classify.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/children/Classify.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/children/HomePage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/children/HomePage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/home/children/Mine.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/home/children/Mine.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/children/HomePage.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/unpackage/dist/dev/.sourcemap/mp-weixin/pages/home/children/HomePage.js.map" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,17 +20,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/home/children/HomePage.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="60" column="8" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+            <state relative-caret-position="484">
+              <caret line="66" column="5" lean-forward="true" selection-start-line="63" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/home/children/Classify.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="160" column="5" lean-forward="true" selection-start-line="157" selection-start-column="4" selection-end-line="160" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/home/children/BookCase.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/home/children/BookCase.vue">
+        <entry file="file://$PROJECT_DIR$/pages/home/children/Mine.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+            <state relative-caret-position="2090">
+              <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -57,10 +79,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pages/home/Home.vue" />
+        <option value="$PROJECT_DIR$/colorui/main.css" />
+        <option value="$PROJECT_DIR$/style/global.css" />
         <option value="$PROJECT_DIR$/pages/home/children/HomePage.vue" />
+        <option value="$PROJECT_DIR$/pages/home/children/Classify.vue" />
         <option value="$PROJECT_DIR$/pages/home/children/BookCase.vue" />
+        <option value="$PROJECT_DIR$/pages/home/children/Mine.vue" />
       </list>
     </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1912" />
+    <option name="y" value="392" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectId" id="1YkwSEuSJuXk6vH1stCPTcxkmLu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -81,6 +113,11 @@
             <path>
               <item name="cykb-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="cykb-front" type="462c0819:PsiDirectoryNode" />
+              <item name="colorui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cykb-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cykb-front" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -95,6 +132,11 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="home" type="462c0819:PsiDirectoryNode" />
               <item name="children" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cykb-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cykb-front" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -283,17 +325,33 @@
       <option name="project" value="LOCAL" />
       <updated>1583723907900</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="bookcase bug解决">
+      <created>1583724125272</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1583724125272</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3946000" />
+    <option name="totallyTimeSpent" value="5957000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="392" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18177028" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16754478" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -302,7 +360,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.24728851" />
+      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.22993493" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.23752712" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.4186551" />
@@ -369,16 +427,10 @@
     <MESSAGE value="mine 页面初步完成" />
     <MESSAGE value="homepage删除滑动" />
     <MESSAGE value="homepage bug解决" />
-    <option name="LAST_COMMIT_MESSAGE" value="homepage bug解决" />
+    <MESSAGE value="bookcase bug解决" />
+    <option name="LAST_COMMIT_MESSAGE" value="bookcase bug解决" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/home/Home.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1144">
-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/colorui/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -386,17 +438,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/colorui/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="3893" column="1" lean-forward="true" selection-start-line="3893" selection-start-column="1" selection-end-line="3893" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/style/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="1" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/home/children/HomePage.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="60" column="8" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="8" />
+        <state relative-caret-position="484">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="63" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/home/Home.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/home/children/Classify.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="160" column="5" lean-forward="true" selection-start-line="157" selection-start-column="4" selection-end-line="160" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/home/children/BookCase.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        <state relative-caret-position="580">
+          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/home/children/Mine.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2090">
+          <caret line="95" column="5" selection-start-line="95" selection-start-column="5" selection-end-line="95" selection-end-column="5" />
         </state>
       </provider>
     </entry>

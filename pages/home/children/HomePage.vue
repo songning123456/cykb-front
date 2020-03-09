@@ -1,7 +1,8 @@
 <template>
     <view class="home-page full-size">
         <view class="cu-list full-size menu-avatar">
-            <view class="cu-item global-bg-color" v-for="(item,index) in result" :key="index">
+            <view class="cu-item global-bg-color" hover-class='hover-class-style' hover-stay-time='1200'
+                  v-for="(item,index) in result" :key="index">
                 <view class="cu-avatar radius lg" :style="[{backgroundImage: item.coverUrl}]"></view>
                 <view class="content">
                     <view class="text-black text-df">{{item.title}}</view>
@@ -51,11 +52,17 @@
 
             .cu-item {
                 justify-content: unset;
+                padding-right: unset;
 
                 .content {
-                    width: calc(100% - 96upx - 80upx);
+                    width: calc(100% - 96upx - 70upx);
                 }
             }
         }
+    }
+
+    .hover-class-style {
+        opacity: 0.9;
+        background: #f7f7f7 !important;
     }
 </style>
