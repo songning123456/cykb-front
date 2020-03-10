@@ -1,11 +1,11 @@
 {
   "pages": [
     {
-      "path": "pages/login/Login",
+      "path": "pages/home/Home",
       "style": {}
     },
     {
-      "path": "pages/home/Home",
+      "path": "pages/login/Login",
       "style": {}
     },
     {

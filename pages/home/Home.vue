@@ -37,12 +37,26 @@
                 return `height: calc(100% - ${this.CustomBar}px - 100rpx)`;
             }
         },
-        onLoad: function (option) {
+        created() {
+            debugger;
+            uni.getStorage({
+                key: 'userInfo',
+                success: data => {
+                    this.$store.commit('SET_USERINFO', data);
+                }
+            });
+        },
+        onLoad(params) {
             debugger;
         },
         methods: {
             changeCategory(category) {
                 this.currentCategory = category;
+                if (category === 'bookcase' && !this.$store.state.userInfo) {
+                    uni.navigateTo({
+                        url: '/pages/login/Login'
+                    });
+                }
             },
             modifySex(sex) {
                 if (sex) {
@@ -51,6 +65,7 @@
                     return 'female'
                 }
             },
+            // 跳转到 分类 栏
             navChange(arg0) {
                 this.currentCategory = arg0;
             }
