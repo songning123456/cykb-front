@@ -38,7 +38,6 @@
             }
         },
         created() {
-            debugger;
             uni.getStorage({
                 key: 'userInfo',
                 success: data => {
@@ -46,16 +45,14 @@
                 }
             });
         },
-        onLoad(params) {
-            debugger;
-        },
         methods: {
             changeCategory(category) {
-                this.currentCategory = category;
                 if (category === 'bookcase' && !this.$store.state.userInfo) {
                     uni.navigateTo({
                         url: '/pages/login/Login'
                     });
+                } else {
+                    this.currentCategory = category;
                 }
             },
             modifySex(sex) {

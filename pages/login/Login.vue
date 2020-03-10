@@ -1,5 +1,8 @@
 <template>
-    <view class="login index-style flex solid-bottom padding justify-center login-image">
+    <view class="login index-style login-image">
+        <cu-custom :is-back="true">
+            <block slot="content">畅游看吧</block>
+        </cu-custom>
         <button class="cu-btn block bg-red margin-tb-sm lg" open-type="getUserInfo" @getuserinfo="loginWx"
                 withCredentials="true">
             一键登录
