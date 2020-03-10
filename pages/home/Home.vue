@@ -37,6 +37,9 @@
                 return `height: calc(100% - ${this.CustomBar}px - 100rpx)`;
             }
         },
+        onLoad: function (option) {
+            debugger;
+        },
         methods: {
             changeCategory(category) {
                 this.currentCategory = category;

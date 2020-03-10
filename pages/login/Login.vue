@@ -12,6 +12,7 @@
 
 <script>
     import request from '../../util/request';
+    import common from '../../util/common';
 
     export default {
         name: "Login",
@@ -25,11 +26,10 @@
                 key: 'userInfo',
                 success: response1 => {
                     uni.navigateTo({
-                        url: '/pages/home/Home?userInfo=' + response1
+                        url: '/pages/home/Home?userInfo=' + JSON.stringify(response1)
                     });
                 },
                 fail: reject1 => {
-                    debugger;
                     // doNothing...
                 }
             });
@@ -50,7 +50,8 @@
                                     condition: {
                                         code: response2.code,
                                         avatar: response3.userInfo.avatarUrl,
-                                        nickName: response3.userInfo.nickName
+                                        nickName: response3.userInfo.nickName,
+                                        gender: common.getGender(response3.userInfo.gender)
                                     }
                                 };
                                 request.post('/users/weixin/getUsersInfo', params).then(data => {
@@ -59,10 +60,10 @@
                                         this.userInfo = data.data[0];
                                         uni.setStorage({
                                             key: 'userInfo',
-                                            data: this.userInfo
+                                            data: JSON.stringify(this.userInfo)
                                         });
                                         uni.navigateTo({
-                                            url: '/pages/home/Home?userInfo=' + this.userInfo
+                                            url: '/pages/home/Home?userInfo=' + JSON.stringify(this.userInfo)
                                         });
                                     } else {
                                         uni.showToast({
