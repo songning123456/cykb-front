@@ -1,11 +1,9 @@
 <template>
-    <view class="index-style flex solid-bottom padding justify-center">
-        <view class="flex solid-bottom padding align-center">
-            <button class="cu-btn block bg-blue margin-tb-sm lg" open-type="getUserInfo" @getuserinfo="loginWx"
-                    withCredentials="true">
-                登录
-            </button>
-        </view>
+    <view class="login index-style flex solid-bottom padding justify-center login-image">
+        <button class="cu-btn block bg-red margin-tb-sm lg" open-type="getUserInfo" @getuserinfo="loginWx"
+                withCredentials="true">
+            一键登录
+        </button>
     </view>
 
 </template>
@@ -16,17 +14,12 @@
 
     export default {
         name: "Login",
-        data() {
-            return {
-                userInfo: {}
-            };
-        },
         mounted() {
             uni.getStorage({
                 key: 'userInfo',
                 success: response1 => {
                     uni.navigateTo({
-                        url: '/pages/home/Home?userInfo=' + JSON.stringify(response1)
+                        url: '/pages/home/Home?userInfo=' + response1
                     });
                 },
                 fail: reject1 => {
@@ -38,14 +31,13 @@
             loginWx() {
                 uni.login({
                     success: response2 => {
-                        uni.showLoading({
-                            title: '登陆中'
-                        });
                         // 获取用户信息
                         uni.getUserInfo({
                             provider: 'weixin',
                             success: response3 => {
-                                debugger;
+                                uni.showLoading({
+                                    title: '登陆中'
+                                });
                                 let params = {
                                     condition: {
                                         code: response2.code,
@@ -57,13 +49,13 @@
                                 request.post('/users/weixin/getUsersInfo', params).then(data => {
                                     uni.hideLoading();
                                     if (data.status === 200) {
-                                        this.userInfo = data.data[0];
+                                        let result = JSON.stringify(data.data[0]);
                                         uni.setStorage({
                                             key: 'userInfo',
-                                            data: JSON.stringify(this.userInfo)
+                                            data: result
                                         });
                                         uni.navigateTo({
-                                            url: '/pages/home/Home?userInfo=' + JSON.stringify(this.userInfo)
+                                            url: '/pages/home/Home?userInfo=' + result
                                         });
                                     } else {
                                         uni.showToast({
@@ -82,12 +74,7 @@
                                 })
                             },
                             fail: reject3 => {
-                                uni.hideLoading();
-                                uni.showToast({
-                                    title: '获取用户信息失败',
-                                    duration: 1000,
-                                    icon: 'none'
-                                });
+                                // doNothing...
                             }
                         });
                     },
@@ -104,6 +91,16 @@
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    .login {
+        .cu-btn {
+            width: 400upx;
+            position: absolute;
+            top: 85%;
+            left: 50%;
+            z-index: 10;
+            transform: translate(-50%, -50%);
+        }
+    }
 
 </style>
