@@ -6,7 +6,7 @@
             <classify v-if="currentCategory === 'classify'" :sex="modifySex(sex)"></classify>
             <search v-if="currentCategory === 'search'"></search>
             <book-case v-if="currentCategory === 'bookcase'" @navChange="navChange"></book-case>
-            <mine v-if="currentCategory === 'my'"></mine>
+            <mine v-if="currentCategory === 'my'" ref='my'></mine>
         </view>
         <BottomBar :category="currentCategory" @changeCategory="changeCategory" ref="bottomBar"></BottomBar>
     </view>
@@ -46,8 +46,7 @@
             });
         },
         onPullDownRefresh() {
-            console.error('下拉home');
-            uni.stopPullDownRefresh();
+
         },
         methods: {
             changeCategory(category) {

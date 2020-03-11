@@ -6,11 +6,15 @@
                     <view class="cu-avatar round xl" :style='avatarClazz'>
                         <view v-if='userInfo.gender' class="cu-tag badge" :class="sexClazz"></view>
                         <button v-if="!userInfo" class="cu-btn round line-gray sm" open-type="getUserInfo"
-                                @getuserinfo="loginWx" withCredentials="true">
+                                @getuserinfo="wxBtn" withCredentials="true">
                             点击登陆
                         </button>
                     </view>
                     <view class="margin-top-xs text-gray">{{userInfo.nickName ? userInfo.nickName : '未知'}}
+                        <button v-if="userInfo" class="cu-btn round line-green sm margin-left-xs" open-type="getUserInfo"
+                                @getuserinfo="wxBtn" withCredentials="true">
+                            <text class="cuIcon-refresh"></text>刷新
+                        </button>
                     </view>
                 </view>
             </view>
@@ -92,10 +96,6 @@
                 return clazz;
             }
         },
-        onPullDownRefresh() {
-            console.error('下拉mine');
-            uni.stopPullDownRefresh();
-        },
         methods: {
             tapBtn(type) {
                 switch (type) {
@@ -125,69 +125,66 @@
                     });
                 }
             },
-            loginWx() {
-                if (!this.userInfo) {
-                    uni.login({
-                        success: response2 => {
-                            debugger;
-                            // 获取用户信息
-                            uni.getUserInfo({
-                                provider: 'weixin',
-                                success: response3 => {
-                                    debugger;
-                                    uni.showLoading({
-                                        title: '登陆中'
-                                    });
-                                    let params = {
-                                        condition: {
-                                            code: response2.code,
-                                            avatar: response3.userInfo.avatarUrl,
-                                            nickName: response3.userInfo.nickName,
-                                            gender: common.getGender(response3.userInfo.gender)
-                                        }
-                                    };
-                                    request.post('/users/weixin/getUsersInfo', params).then(data => {
-                                        uni.hideLoading();
-                                        if (data.status === 200) {
-                                            let result = JSON.stringify(data.data[0]);
-                                            uni.setStorage({
-                                                key: 'userInfo',
-                                                data: result
-                                            });
-                                            this.$store.commit('SET_USERINFO', data.data[0]);
-                                            this.userInfo = data.data[0];
-                                        } else {
-                                            uni.showToast({
-                                                title: '获取用户信息失败',
-                                                duration: 1000,
-                                                icon: 'none'
-                                            });
-                                        }
-                                    }).catch(e => {
-                                        uni.hideLoading();
+            wxBtn() {
+                uni.login({
+                    success: response2 => {
+                        // 获取用户信息
+                        uni.getUserInfo({
+                            provider: 'weixin',
+                            success: response3 => {
+                                debugger;
+                                uni.showLoading({
+                                    title: '登陆中'
+                                });
+                                let params = {
+                                    condition: {
+                                        code: response2.code,
+                                        avatar: response3.userInfo.avatarUrl,
+                                        nickName: response3.userInfo.nickName,
+                                        gender: common.getGender(response3.userInfo.gender)
+                                    }
+                                };
+                                request.post('/users/weixin/getUsersInfo', params).then(data => {
+                                    uni.hideLoading();
+                                    if (data.status === 200) {
+                                        let result = JSON.stringify(data.data[0]);
+                                        uni.setStorage({
+                                            key: 'userInfo',
+                                            data: result
+                                        });
+                                        this.$store.commit('SET_USERINFO', data.data[0]);
+                                        this.userInfo = data.data[0];
+                                    } else {
                                         uni.showToast({
                                             title: '获取用户信息失败',
                                             duration: 1000,
                                             icon: 'none'
                                         });
-                                    })
-                                },
-                                fail: reject3 => {
-                                    debugger;
-                                    // doNothing...
-                                }
-                            });
-                        },
-                        fail: response2 => {
-                            debugger;
-                            uni.showToast({
-                                title: '登录失败',
-                                duration: 1000,
-                                icon: 'none'
-                            });
-                        }
-                    });
-                }
+                                    }
+                                }).catch(e => {
+                                    uni.hideLoading();
+                                    uni.showToast({
+                                        title: '获取用户信息失败',
+                                        duration: 1000,
+                                        icon: 'none'
+                                    });
+                                })
+                            },
+                            fail: reject3 => {
+                                debugger;
+                                // doNothing...
+                            }
+                        });
+                    },
+                    fail: response2 => {
+                        debugger;
+                        uni.showToast({
+                            title: '登录失败',
+                            duration: 1000,
+                            icon: 'none'
+                        });
+                    }
+                });
             }
         }
     }
