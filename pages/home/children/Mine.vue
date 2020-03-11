@@ -6,11 +6,12 @@
                     <view class="cu-avatar round xl" :style='avatarClazz'>
                         <view v-if='userInfo.gender' class="cu-tag badge" :class="sexClazz"></view>
                         <button v-if="!userInfo" class="cu-btn round line-gray sm" open-type="getUserInfo"
-                                @getuserinfo="login" withCredentials="true">
+                                @getuserinfo="loginWx" withCredentials="true">
                             点击登陆
                         </button>
                     </view>
-                    <view class="margin-top-xs text-gray">{{userInfo.nickName ? userInfo.nickName : '未知'}}</view>
+                    <view class="margin-top-xs text-gray">{{userInfo.nickName ? userInfo.nickName : '未知'}}
+                    </view>
                 </view>
             </view>
         </view>
@@ -120,7 +121,7 @@
                     });
                 }
             },
-            login() {
+            loginWx() {
                 if (!this.userInfo) {
                     uni.login({
                         success: response2 => {
@@ -149,6 +150,7 @@
                                                 key: 'userInfo',
                                                 data: result
                                             });
+                                            this.$store.commit('SET_USERINFO', data.data[0]);
                                             this.userInfo = data.data[0];
                                         } else {
                                             uni.showToast({

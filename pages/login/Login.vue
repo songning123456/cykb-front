@@ -46,6 +46,7 @@
                                         });
                                         this.goBack(data.data[0]);
                                     } else {
+                                        console.error('获取用户信息失败1');
                                         uni.showToast({
                                             title: '获取用户信息失败',
                                             duration: 1000,
@@ -54,6 +55,7 @@
                                     }
                                 }).catch(e => {
                                     uni.hideLoading();
+                                    console.error('获取用户信息失败2');
                                     uni.showToast({
                                         title: '获取用户信息失败',
                                         duration: 1000,
