@@ -41,7 +41,7 @@
             uni.getStorage({
                 key: 'userInfo',
                 success: data => {
-                    this.$store.commit('SET_USERINFO', data);
+                    this.$store.commit('SET_USERINFO', JSON.parse(data.data));
                 }
             });
         },

@@ -1,7 +1,7 @@
 <template>
     <view class="home-page full-size">
         <view class="cu-list full-size">
-            <view class="cu-card article no-card" v-for="(item, index) in result" :key="index">
+            <view class="cu-card article no-card" hover-class='hover-class-style' hover-stay-time='1200' v-for="(item, index) in result" :key="index">
                 <view class="cu-item shadow global-bg-color">
                     <view class="title">
                         <view class="text-cut text-center text-shadow">{{item.title}}</view>
