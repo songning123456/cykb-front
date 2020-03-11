@@ -10,12 +10,7 @@
                             点击登陆
                         </button>
                     </view>
-                    <view class="margin-top-xs text-gray">{{userInfo.nickName ? userInfo.nickName : '未知'}}
-                        <button v-if="userInfo" class="cu-btn round line-green sm margin-left-xs" open-type="getUserInfo"
-                                @getuserinfo="wxBtn" withCredentials="true">
-                            <text class="cuIcon-refresh"></text>刷新
-                        </button>
-                    </view>
+                    <view class="margin-top-xs text-gray">{{userInfo.nickName ? userInfo.nickName : '未知'}}</view>
                 </view>
             </view>
         </view>
