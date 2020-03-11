@@ -1,7 +1,8 @@
 <template>
     <view class="book-case full-size">
-        <view class="cu-list full-size menu-avatar global-bg-color">
-            <view class="cu-item global-bg-color" hover-class='hover-class-style' hover-stay-time='1200' v-for="(item,index) in result" :key="index"
+        <view v-if="userInfo" class="cu-list full-size menu-avatar global-bg-color">
+            <view class="cu-item global-bg-color" hover-class='hover-class-style' hover-stay-time='1200'
+                  v-for="(item,index) in result" :key="index"
                   :class="modalName==='move-box-'+ index?'move-cur':''"
                   @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd"
                   :data-target="'move-box-' + index">
@@ -26,17 +27,22 @@
                 </view>
             </view>
         </view>
+        <inset-login v-else @userInfo="getUserInfo"></inset-login>
     </view>
 </template>
 
 <script>
+    import InsetLogin from "../../comment/InsetLogin";
+
     export default {
         name: "BookCase",
+        components: {InsetLogin},
         data() {
             return {
                 modalName: '',
                 listTouchStart: 0,
                 listTouchDirection: null,
+                userInfo: this.$store.state.userInfo,
                 // 假数据
                 result: [
                     {
@@ -78,9 +84,11 @@
                 this.listTouchDirection = null
             },
             navChange() {
-                debugger;
                 this.$emit('navChange', 'classify');
-            }
+            },
+            getUserInfo(arg0) {
+                this.userInfo = arg0;
+            },
         }
     }
 </script>

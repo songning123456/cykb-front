@@ -45,15 +45,13 @@
                 }
             });
         },
+        onPullDownRefresh() {
+            console.error('下拉home');
+            uni.stopPullDownRefresh();
+        },
         methods: {
             changeCategory(category) {
-                if (category === 'bookcase' && !this.$store.state.userInfo) {
-                    uni.navigateTo({
-                        url: '/pages/login/Login'
-                    });
-                } else {
-                    this.currentCategory = category;
-                }
+                this.currentCategory = category;
             },
             modifySex(sex) {
                 if (sex) {

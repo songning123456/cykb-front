@@ -2,7 +2,9 @@
   "pages": [
     {
       "path": "pages/home/Home",
-      "style": {}
+      "style": {
+        "enablePullDownRefresh": true
+      }
     },
     {
       "path": "pages/login/Login",
@@ -14,9 +16,6 @@
     }
   ],
   "globalStyle": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#f7f6f2",
     "backgroundColor": "#f7f6f2",
     "navigationStyle": "custom"
   }

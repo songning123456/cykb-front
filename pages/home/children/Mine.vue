@@ -92,6 +92,10 @@
                 return clazz;
             }
         },
+        onPullDownRefresh() {
+            console.error('下拉mine');
+            uni.stopPullDownRefresh();
+        },
         methods: {
             tapBtn(type) {
                 switch (type) {
