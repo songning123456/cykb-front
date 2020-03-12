@@ -1,15 +1,17 @@
 <template>
     <view class="classify global-bg-color cu-list grid" :class="['col-' + gridCol,gridBorder?'':'no-border']">
-        <view class="cu-item" hover-class='hover-class-style' hover-stay-time='1200' v-for="(item,index) in result" :key="index">
+        <view class="cu-item" hover-class='hover-class-style' hover-stay-time='1200' v-for="(item,index) in result"
+              :key="index">
             <view class="cu-avatar lg radius" :class="'category-' +sex + '-' + item.category"></view>
             <view class="classify-margin text-black text-df">{{convertCategory(item.category)}}</view>
-            <view class="text-gray text-sm">{{item.total}}</view>
+            <view class="text-gray text-sm">{{convertTotal(item.total)}}</view>
         </view>
     </view>
 </template>
 
 <script>
-    import category from "../../../util/category";
+    import Category from "../../../util/category";
+    import request from '../../../util/request';
 
     export default {
         name: "Classify",
@@ -23,100 +25,7 @@
             return {
                 gridCol: 3,
                 gridBorder: true,
-                form: {
-                    sex: ''
-                },
-                result: [],
-                params1: [
-                    {
-                        category: 'xuanhuan',
-                        total: '10000'
-                    }, {
-                        category: 'qihuan',
-                        total: '10000'
-                    }, {
-                        category: 'wuxia',
-                        total: '10000'
-                    }, {
-                        category: 'xianxia',
-                        total: '10000'
-                    }, {
-                        category: 'dushi',
-                        total: '10000'
-                    }, {
-                        category: 'zhichang',
-                        total: '10000'
-                    }, {
-                        category: 'xianshi',
-                        total: '10000'
-                    }, {
-                        category: 'lishi',
-                        total: '10000'
-                    }, {
-                        category: 'junshi',
-                        total: '10000'
-                    }, {
-                        category: 'youxi',
-                        total: '10000'
-                    }, {
-                        category: 'tiyu',
-                        total: '10000'
-                    }, {
-                        category: 'kehuan',
-                        total: '10000'
-                    }, {
-                        category: 'xuanyi',
-                        total: '10000'
-                    }, {
-                        category: 'qingxiaoshuo',
-                        total: '10000'
-                    }, {
-                        category: 'tongren',
-                        total: '10000'
-                    }
-                ],
-                params2: [
-                    {
-                        category: 'gudaiyanqing',
-                        total: '10000'
-                    },
-                    {
-                        category: 'xiandaiyanqing',
-                        total: '10000'
-                    },
-                    {
-                        category: 'xuanhuanyanqing',
-                        total: '10000'
-                    },
-                    {
-                        category: 'xuanyituili',
-                        total: '10000'
-                    },
-                    {
-                        category: 'langmanqingchun',
-                        total: '10000'
-                    },
-                    {
-                        category: 'xianxiaqiyuan',
-                        total: '10000'
-                    },
-                    {
-                        category: 'kehuankongjian',
-                        total: '10000'
-                    },
-                    {
-                        category: 'youxijingji',
-                        total: '10000'
-                    },
-                    {
-                        category: 'qingxiaoshuo',
-                        total: '10000'
-                    },
-                    {
-                        category: 'xianshishenghuo',
-                        total: '10000'
-                    }
-                ]
+                result: []
             }
         },
         watch: {
@@ -131,14 +40,25 @@
         },
         methods: {
             convertCategory(arg0) {
-                return category[this.sex][arg0];
+                return Category[this.sex][arg0];
+            },
+            convertTotal(arg0) {
+                let result = arg0;
+                (result || 0).toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+                result = '共' + result + '部';
+                return result;
             },
             queryBtn() {
-                if (this.sex === 'male') {
-                    this.result = this.params1;
-                } else {
-                    this.result = this.params2;
-                }
+                let params = {
+                    condition: {
+                        sex: this.sex
+                    }
+                };
+                request.post('/novels/classify', params).then(data => {
+                    if (data.status === 200 && data.total > 0) {
+                        this.result = data.data;
+                    }
+                });
             }
         }
     }
