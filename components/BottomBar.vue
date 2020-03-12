@@ -1,5 +1,5 @@
 <template>
-    <view class="bottom-bar cu-bar tabbar global-bg-color">
+    <view class="bottom-bar cu-bar tabbar global-bg-color shadow foot">
         <view class="action" v-for="(value,key, index) in cuIcons" :key="index" @tap="changeCategory(key)"
               :class="[category === key ? 'text-red' : 'text-gray',key === 'search' ? 'add-action' : '']">
             <view v-if="key !== 'search'" :class="'cuIcon-' + value.icon"></view>
@@ -37,9 +37,6 @@
 
 <style scoped>
     .bottom-bar {
-        bottom: 0;
-        position: fixed;
-        width: 100%;
         border-top: 1px solid grey;
     }
 

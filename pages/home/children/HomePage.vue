@@ -1,20 +1,22 @@
 <template>
     <view class="home-page full-size">
         <view class="cu-list full-size">
-            <view class="cu-card article no-card" hover-class='hover-class-style' hover-stay-time='1200' v-for="(item, index) in result" :key="index">
+            <view class="cu-card article no-card" hover-class='hover-class-style' hover-stay-time='1200'
+                  v-for="(item, index) in result" :key="index">
                 <view class="cu-item shadow global-bg-color">
                     <view class="title">
-                        <view class="text-cut text-center text-shadow">{{item.title}}</view>
+                        <view class="text-cut text-shadow">{{item.title}}</view>
                     </view>
                     <view class="content">
-                        <image :src="item.coverUrl"
+                        <image :src="getCoverUrl(item.coverUrl)"
                                mode="aspectFill"></image>
                         <view class="desc">
                             <view class="text-content">{{item.introduction}}</view>
                             <view>
                                 <view class="cu-tag bg-red light sm round">{{item.author}}</view>
-                                <view class="cu-tag bg-green light sm round">{{item.category}}</view>
-                                <view class="cu-tag bg-yellow light sm round">{{item.sex}}</view>
+                                <view class="cu-tag bg-green light sm round">{{getCategory(item.sex, item.category)}}
+                                </view>
+                                <view class="cu-tag bg-yellow light sm round">{{getSex(item.sex)}}</view>
                             </view>
                         </view>
                     </view>
@@ -25,30 +27,59 @@
 </template>
 
 <script>
+    import request from '../../../util/request';
+    import common from '../../../util/common';
+    import Category from '../../../util/category';
+
     export default {
         name: "HomePage",
+        props: {
+            value: {
+                type: Number,
+                default: 0
+            }
+        },
         data() {
             return {
+                page: {
+                    index: 0,
+                    size: 20,
+                    total: 0
+                },
                 result: []
             }
-        },// todo 假数据，待删除
+        },
         mounted() {
-            setTimeout(() => {
-                let obj = {
-                    coverUrl: 'https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg',
-                    title: '书名',
-                    author: '作者',
-                    category: '玄幻',
-                    sex: '男频',
-                    introduction: '折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！'
+            uni.startPullDownRefresh();
+        },
+        methods: {
+            getFirstList() {
+                this.$emit('input', 0);
+                this.page.index = 0;
+                let params = {
+                    recordStartNo: this.page.index,
+                    pageRecordNum: this.page.size
                 };
-                let temps = [];
-                for (let i = 0; i < 20; i++) {
-                    let temp = Object.assign({}, obj);
-                    temps.push(temp);
-                }
-                this.result = temps;
-            }, 1)
+                uni.showNavigationBarLoading();
+                request.post('/novels/homePage', params).then(data => {
+                    if (data.status === 200 && data.total > 0) {
+                        this.result = data.data;
+                        this.page.total = data.total;
+                    }
+                }).finally(() => {
+                    uni.hideNavigationBarLoading();
+                    uni.stopPullDownRefresh();//得到数据后停止下拉刷新
+                });
+            },
+            getCoverUrl(url) {
+                return common.getCover(url);
+            },
+            getSex(sex) {
+                return common.getSex(sex)
+            },
+            getCategory(sex, category) {
+                return Category[sex][category];
+            }
         }
     }
 </script>
@@ -58,6 +89,10 @@
 
         .cu-list {
             overflow: auto;
+
+            .cu-item {
+                padding: unset;
+            }
         }
     }
 

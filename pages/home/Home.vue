@@ -1,14 +1,15 @@
 <template>
     <view class="index-style home global-bg-color">
         <TopBar :category="currentCategory" v-model='sex'></TopBar>
-        <view class="content global-bg-color" :style="contentStyle">
-            <home-page v-if="currentCategory === 'homePage'"></home-page>
-            <classify v-if="currentCategory === 'classify'" :sex="modifySex(sex)"></classify>
-            <search v-if="currentCategory === 'search'"></search>
-            <book-case v-if="currentCategory === 'bookcase'" @navChange="navChange"></book-case>
+        <view class="content global-bg-color">
+            <home-page v-if="currentCategory === 'homePage'" v-model='loadingType' ref="homePage"></home-page>
+            <classify v-if="currentCategory === 'classify'" :sex="modifySex(sex)" ref="classify"></classify>
+            <search v-if="currentCategory === 'search'" ref="search"></search>
+            <book-case v-if="currentCategory === 'bookcase'" @navChange="navChange" ref="bookcase"></book-case>
             <mine v-if="currentCategory === 'my'" ref='my'></mine>
         </view>
         <BottomBar :category="currentCategory" @changeCategory="changeCategory" ref="bottomBar"></BottomBar>
+        <load-more :loadingType="loadingType"></load-more>
     </view>
 </template>
 
@@ -20,15 +21,17 @@
     import HomePage from "./children/HomePage";
     import Search from "./children/Search";
     import BookCase from "./children/BookCase";
+    import LoadMore from "../comment/LoadMore";
 
     export default {
         name: "Home",
-        components: {BookCase, Search, HomePage, Mine, Classify, BottomBar, TopBar},
+        components: {LoadMore, BookCase, Search, HomePage, Mine, Classify, BottomBar, TopBar},
         data() {
             return {
                 CustomBar: this.CustomBar,
                 currentCategory: 'homePage',
-                sex: true
+                sex: true,
+                loadingType: 0//定义加载方式 0---contentdown  1---contentrefresh 2---contentnomore
             }
         },
         computed: {
@@ -46,7 +49,35 @@
             });
         },
         onPullDownRefresh() {
-
+            switch (this.currentCategory) {
+                case 'homePage':
+                    this.$refs.homePage.getFirstList();
+                    break;
+                case 'classify':
+                    break;
+                case 'search':
+                    break;
+                case 'bookcase':
+                    break;
+                case 'my':
+                    uni.stopPullDownRefresh();
+                    break;
+            }
+        },
+        onReachBottom() {
+            switch (this.currentCategory) {
+                case 'homePage':
+                    break;
+                case 'classify':
+                    break;
+                case 'search':
+                    break;
+                case 'bookcase':
+                    break;
+                case 'my':
+                    // uni.stopPullDownRefresh();
+                    break;
+            }
         },
         methods: {
             changeCategory(category) {
@@ -70,6 +101,14 @@
 <style lang="scss" scoped>
     .home {
         overflow: unset;
+
+        &.home::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .content::-webkit-scrollbar {
+            width: 0;
+        }
     }
 
 </style>
