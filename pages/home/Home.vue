@@ -2,14 +2,20 @@
     <view class="index-style home global-bg-color">
         <TopBar :category="currentCategory" v-model='sex'></TopBar>
         <view class="content global-bg-color">
-            <home-page v-if="currentCategory === 'homePage'" v-model='loadingType' ref="homePage"></home-page>
-            <classify v-if="currentCategory === 'classify'" :sex="modifySex(sex)" ref="classify"></classify>
-            <search v-if="currentCategory === 'search'" ref="search"></search>
-            <book-case v-if="currentCategory === 'bookcase'" @navChange="navChange" ref="bookcase"></book-case>
-            <mine v-if="currentCategory === 'my'" ref='my'></mine>
+            <home-page v-if="activated['homePage']" :class="{'no-show': currentCategory !== 'homePage'}"
+                       v-model='loadingType'
+                       ref="homePage"></home-page>
+            <classify v-if="activated['classify']" :class="{'no-show': currentCategory !== 'classify'}"
+                      :sex="modifySex(sex)"
+                      ref="classify"></classify>
+            <search v-if="activated['search']" :class="{'no-show': currentCategory !== 'search'}" ref="search"></search>
+            <book-case v-if="activated['bookcase']" :class="{'no-show': currentCategory !== 'bookcase'}"
+                       @navChange="navChange"
+                       ref="bookcase"></book-case>
+            <mine v-if="activated['my']" :class="{'no-show': currentCategory !== 'my'}" ref='my'></mine>
         </view>
         <BottomBar :category="currentCategory" @changeCategory="changeCategory" ref="bottomBar"></BottomBar>
-        <load-more :loadingType="loadingType"></load-more>
+        <!--        <load-more :loadingType="loadingType"></load-more>-->
     </view>
 </template>
 
@@ -29,7 +35,14 @@
         data() {
             return {
                 CustomBar: this.CustomBar,
-                currentCategory: 'classify',
+                currentCategory: 'homePage',
+                activated: {
+                    'homePage': true,
+                    'classify': false,
+                    'search': false,
+                    'bookcase': false,
+                    'my': false
+                },
                 sex: true,
                 loadingType: 0//定义加载方式 0---contentdown  1---contentrefresh 2---contentnomore
             }
@@ -51,15 +64,16 @@
         onPullDownRefresh() {
             switch (this.currentCategory) {
                 case 'homePage':
-                    this.$refs.homePage.getFirstList();
+                    this.$refs.homePage.getHomePageFirst();
                     break;
                 case 'classify':
-                    uni.stopPullDownRefresh();
+                    this.$refs.classify.getClassify();
                     break;
                 case 'search':
                     uni.stopPullDownRefresh();
                     break;
                 case 'bookcase':
+                    this.$refs.bookcase.getBookcase();
                     break;
                 case 'my':
                     uni.stopPullDownRefresh();
@@ -82,6 +96,9 @@
         },
         methods: {
             changeCategory(category) {
+                if (!this.activated[category]) {
+                    this.activated[category] = true;
+                }
                 this.currentCategory = category;
             },
             modifySex(sex) {
@@ -100,16 +117,14 @@
 </script>
 
 <style lang="scss" scoped>
-    .home {
-        overflow: unset;
+    ::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        color: transparent;
+    }
 
-        &.home::-webkit-scrollbar {
-            width: 0;
-        }
-
-        .content::-webkit-scrollbar {
-            width: 0;
-        }
+    .no-show {
+        display: none;
     }
 
 </style>

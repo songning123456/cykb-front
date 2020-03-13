@@ -4,17 +4,17 @@
             <view class="cu-card article no-card" hover-class='hover-class-style' hover-stay-time='1200'
                   v-for="(item, index) in result" :key="index">
                 <view class="cu-item shadow global-bg-color">
-                    <view class="title">
-                        <view class="text-cut text-shadow">{{item.title}}</view>
-                    </view>
                     <view class="content">
-                        <image :src="convertCoverUrl(item.coverUrl)"
-                               mode="aspectFill"></image>
+                        <image class="image-size" :src="convertCoverUrl(item.coverUrl)"></image>
                         <view class="desc">
+                            <view class="title text-cut text-shadow">
+                                {{item.title}}
+                            </view>
                             <view class="text-content">{{item.introduction}}</view>
                             <view>
                                 <view class="cu-tag bg-red light sm round">{{item.author}}</view>
-                                <view class="cu-tag bg-green light sm round">{{convertCategory(item.sex, item.category)}}
+                                <view class="cu-tag bg-green light sm round">{{convertCategory(item.sex,
+                                    item.category)}}
                                 </view>
                                 <view class="cu-tag bg-yellow light sm round">{{convertSex(item.sex)}}</view>
                             </view>
@@ -53,7 +53,7 @@
             uni.startPullDownRefresh();
         },
         methods: {
-            getFirstList() {
+            getHomePageFirst() {
                 this.$emit('input', 0);
                 this.page.index = 0;
                 let params = {
@@ -90,8 +90,23 @@
         .cu-list {
             overflow: auto;
 
-            .cu-item {
-                padding: unset;
+            .cu-card {
+                padding-bottom: 10upx;
+
+                .cu-item {
+                    padding: unset;
+
+                    .image-size {
+                        margin-top: 18upx;
+                        height: 8em;
+                    }
+
+                    .title {
+                        padding: unset;
+                        height: 60upx;
+                        line-height: 60upx;
+                    }
+                }
             }
         }
     }

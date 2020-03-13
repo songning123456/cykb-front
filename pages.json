@@ -3,7 +3,10 @@
     {
       "path": "pages/home/Home",
       "style": {
-        "enablePullDownRefresh": true
+        "enablePullDownRefresh": true,
+        "app-plus": {
+          "scrollIndicator": "none"
+        }
       }
     },
     {

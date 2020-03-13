@@ -6,12 +6,12 @@
                   :class="modalName==='move-box-'+ index?'move-cur':''"
                   @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd"
                   :data-target="'move-box-' + index">
-                <view class="cu-avatar radius lg" :style="[{backgroundImage: item.coverUrl}]"></view>
+                <view class="cu-avatar radius lg" :style="'backgroundImage: url(' + item.coverUrl + ')'"></view>
                 <view class="content">
                     <view class="text-black text-df">{{item.title}}</view>
                     <view class="text-grey text-sm">{{item.author}}</view>
                     <view class="text-gray text-xs">
-                        <text class="margin-right-xs">{{item.updateTime}} ▪</text>
+                        <text class="margin-right-xs">{{convertDate(item.updateTime)}} ·</text>
                         <text class="text-cut">{{item.latestChapter}}</text>
                     </view>
                 </view>
@@ -33,6 +33,10 @@
 
 <script>
     import InsetLogin from "../../comment/InsetLogin";
+    import request from '../../../util/request';
+    import convertDate from '../../../util/convertDate';
+
+    let currentDate = new Date();
 
     export default {
         name: "BookCase",
@@ -44,26 +48,11 @@
                 listTouchDirection: null,
                 userInfo: this.$store.state.userInfo,
                 // 假数据
-                result: [
-                    {
-                        coverUrl: 'url(https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg)',
-                        title: '书名',
-                        author: '作者',
-                        updateTime: '最近一天',
-                        latestChapter: '测试数据'
-                    }
-                ]
+                result: []
             }
-        },// todo 假数据，待删除
-        created() {
-            for (let i = 1; i < 20; i++) {
-                let temp = Object.assign({}, this.result[0]);
-                temp.title = temp.title + i;
-                temp.author = temp.author + i;
-                temp.updateTime = temp.updateTime + i;
-                temp.latestChapter = temp.latestChapter + i;
-                this.result[i] = temp;
-            }
+        },
+        mounted() {
+            uni.startPullDownRefresh();
         },
         methods: {
             // ListTouch触摸开始
@@ -89,14 +78,39 @@
             getUserInfo(arg0) {
                 this.userInfo = arg0;
             },
+            convertDate(updateTime) {
+                return convertDate.convertZh(currentDate, updateTime);
+            },
+            getBookcase() {
+                let params = {
+                    condition: {
+                        uniqueId: this.userInfo.uniqueId
+                    }
+                };
+                request.post("/relation/bookcase", params).then(data => {
+                    if (data.status === 200 && data.total > 0) {
+                        this.result = data.data;
+                    }
+                }).finally(() => {
+                    uni.hideNavigationBarLoading();
+                    uni.stopPullDownRefresh();//得到数据后停止下拉刷新
+                });
+            }
         }
     }
 </script>
 
 <style lang='scss' scoped>
     .book-case {
-        .cu-list {
-            overflow-y: auto;
+        .cu-item {
+            justify-content: unset;
+            .cu-avatar {
+                float: left;
+            }
+            .content {
+                float: left;
+                width: calc(100% - 52px - 20upx);
+            }
         }
     }
 

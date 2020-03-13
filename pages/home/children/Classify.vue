@@ -32,7 +32,7 @@
             sex: {
                 handler(newVal, oldVal) {
                     if (newVal === 'male' || newVal === 'female') {
-                        this.queryBtn();
+                        this.getClassify();
                     }
                 },
                 immediate: true
@@ -48,7 +48,7 @@
                 result = '共' + result + '部';
                 return result;
             },
-            queryBtn() {
+            getClassify() {
                 let params = {
                     condition: {
                         sex: this.sex
@@ -58,6 +58,9 @@
                     if (data.status === 200 && data.total > 0) {
                         this.result = data.data;
                     }
+                }).finally(() => {
+                    uni.hideNavigationBarLoading();
+                    uni.stopPullDownRefresh();//得到数据后停止下拉刷新
                 });
             }
         }
