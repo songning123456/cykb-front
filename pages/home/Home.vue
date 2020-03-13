@@ -29,7 +29,7 @@
         data() {
             return {
                 CustomBar: this.CustomBar,
-                currentCategory: 'homePage',
+                currentCategory: 'classify',
                 sex: true,
                 loadingType: 0//定义加载方式 0---contentdown  1---contentrefresh 2---contentnomore
             }
@@ -54,8 +54,10 @@
                     this.$refs.homePage.getFirstList();
                     break;
                 case 'classify':
+                    uni.stopPullDownRefresh();
                     break;
                 case 'search':
+                    uni.stopPullDownRefresh();
                     break;
                 case 'bookcase':
                     break;
@@ -75,7 +77,6 @@
                 case 'bookcase':
                     break;
                 case 'my':
-                    // uni.stopPullDownRefresh();
                     break;
             }
         },

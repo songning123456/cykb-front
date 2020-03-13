@@ -8,15 +8,15 @@
                         <view class="text-cut text-shadow">{{item.title}}</view>
                     </view>
                     <view class="content">
-                        <image :src="getCoverUrl(item.coverUrl)"
+                        <image :src="convertCoverUrl(item.coverUrl)"
                                mode="aspectFill"></image>
                         <view class="desc">
                             <view class="text-content">{{item.introduction}}</view>
                             <view>
                                 <view class="cu-tag bg-red light sm round">{{item.author}}</view>
-                                <view class="cu-tag bg-green light sm round">{{getCategory(item.sex, item.category)}}
+                                <view class="cu-tag bg-green light sm round">{{convertCategory(item.sex, item.category)}}
                                 </view>
-                                <view class="cu-tag bg-yellow light sm round">{{getSex(item.sex)}}</view>
+                                <view class="cu-tag bg-yellow light sm round">{{convertSex(item.sex)}}</view>
                             </view>
                         </view>
                     </view>
@@ -71,13 +71,13 @@
                     uni.stopPullDownRefresh();//得到数据后停止下拉刷新
                 });
             },
-            getCoverUrl(url) {
+            convertCoverUrl(url) {
                 return common.getCover(url);
             },
-            getSex(sex) {
+            convertSex(sex) {
                 return common.getSex(sex)
             },
-            getCategory(sex, category) {
+            convertCategory(sex, category) {
                 return Category[sex][category];
             }
         }
