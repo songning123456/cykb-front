@@ -81,6 +81,7 @@
             }
         },
         onReachBottom() {
+            debugger;
             switch (this.currentCategory) {
                 case 'homePage':
                     break;
@@ -117,10 +118,11 @@
 </script>
 
 <style lang="scss" scoped>
-    ::-webkit-scrollbar {
+    .home::-webkit-scrollbar {
         width: 0;
         height: 0;
         color: transparent;
+        display: none;
     }
 
     .no-show {

@@ -6,7 +6,7 @@
                   :class="modalName==='move-box-'+ index?'move-cur':''"
                   @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd"
                   :data-target="'move-box-' + index">
-                <view class="cu-avatar radius lg" :style="'backgroundImage: url(' + item.coverUrl + ')'"></view>
+                <view class="cu-avatar radius xl" :style="'background-image: url(' + item.coverUrl + ')'"></view>
                 <view class="content">
                     <view class="text-black text-df">{{item.title}}</view>
                     <view class="text-grey text-sm">{{item.author}}</view>
@@ -104,12 +104,15 @@
     .book-case {
         .cu-item {
             justify-content: unset;
+            padding-right: unset;
             .cu-avatar {
                 float: left;
+                left: 15upx;
             }
             .content {
                 float: left;
-                width: calc(100% - 52px - 20upx);
+                left: 155upx;
+                width: calc(100% - 160upx - 20upx);
             }
         }
     }

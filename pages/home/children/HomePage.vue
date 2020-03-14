@@ -96,15 +96,18 @@
                 .cu-item {
                     padding: unset;
 
-                    .image-size {
-                        margin-top: 18upx;
-                        height: 8em;
-                    }
+                    .content {
+                        padding: 0 15upx;
+                        .image-size {
+                            margin-top: 18upx;
+                            height: 8em;
+                        }
 
-                    .title {
-                        padding: unset;
-                        height: 60upx;
-                        line-height: 60upx;
+                        .title {
+                            padding: unset;
+                            height: 60upx;
+                            line-height: 60upx;
+                        }
                     }
                 }
             }
